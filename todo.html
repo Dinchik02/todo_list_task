@@ -2,19 +2,70 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
+<body>    
+ <div class="container">
+		<h2>Simple To Do List</h2>
+    <p><em>Click and drag to reorder, double click to cross an item off.</em></p>
+       
+		<form name="toDoList">
+			<input type="text" name="ListItem"/>
+		</form>
     
-    body{  margin: 0;
-  min-width: 250px;}
+		<div id="button">Add</div>
+		<br/>
+		<ol></ol>
+      <style>
+          body {
+font: normal normal 13px/16px "Open Sans", sans-serif;
+background: #dfdfdf;
+}
+
+.container{
+padding: 20px;
+width: 300px;
+margin: 0 auto;
+margin-top: 40px;
+background: white;
+border-radius: 5px;}
+
+form {
+display: inline-block;
+}
+
+input{
+padding: 4px 15px 4px 5px;
+}
+
+#button{
+display: inline-block;
+background-color:#dc999b;
+color:#ffffff;
+border-radius: 5px;
+text-align:center;
+margin-top:2px;
+padding: 5px 15px;
+}
+
+#button:hover{
+cursor: pointer;
+opacity: .6;}
+
+ol {padding-left: 20px;}
+
+ol li {padding: 5px;color:#000;}
+
+ol li:nth-child(even){background: #dfdfdf;}
+
+.strike{text-decoration: line-through;}
+
+li:hover{
+  cursor: pointer;
+ }
+     </style> 
     
-    </style>
+    </div>
+    
+	</body>
+    <script src="todo_list.js"></script>
+    
 </head>
-<body>
-<div data-spy="scroll" data-target="#list-example" data-offset="0" class="scrollspy-example">
-  <h4 id="list-item-1">Item 1</h4>
-  <h4 id="list-item-2">Item 2</h4>
-  <h4 id="list-item-3">Item 3</h4>
-  <h4 id="list-item-4">Item 4</h4>
-</div>
-    </body>
-</html>
