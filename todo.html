@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<body>    
+<body>
  <div class="container">
 		<h2>Simple To Do List</h2>
     <p><em>Click and drag to reorder, double click to cross an item off.</em></p>
@@ -64,8 +64,37 @@ li:hover{
      </style> 
     
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js">
+    
+        $(document).ready(
+    function(){
+        $('#button').click(
+            function(){
+                var toAdd = $('input[name=ListItem]').val();
+                 $('ol').append('<li>' + toAdd + '</li>');
+            });
+       
+       $("input[name=ListItem]").keyup(function(event){
+          if(event.keyCode == 13){
+            $("#button").click();
+          }         
+      });
+      
+      $(document).on('dblclick','li', function(){
+        $(this).toggleClass('strike').fadeOut('slow');    
+      });
+      
+      $('input').focus(function() {
+        $(this).val('');
+      });
+      
+      $('ol').sortable();  
+      
+    }
+);
+    
+    </script>
     
 	</body>
-    <script src="todo_list.js"></script>
     
 </head>
